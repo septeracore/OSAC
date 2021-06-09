@@ -164,7 +164,7 @@ namespace OSAC
             string arg2 = @" -ab ";
             string arg3 = @"k -map_metadata 0 -id3v2_version 3 -vn ";
             string fileout = Path.Combine(outputdisplay.Text, Path.GetFileNameWithoutExtension(inputdisplay.Text) + GetOutExtension());
-            string arguments = arg + abytes + arg1 + inputdisplay.Text + arg2 + qlabel.Content + arg3 + fileout;
+            string arguments = arg + abytes + arg1 + String.Format("\"{0}\"",inputdisplay.Text) + arg2 + qlabel.Content + arg3 + String.Format("\"{0}\"",fileout);
 
             Process ffm = new Process();
             ffm.StartInfo.FileName = ffdir;
